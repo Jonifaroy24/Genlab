@@ -35,6 +35,8 @@
   backdrop-filter: blur(14px);
 }
 
+/* Brand */
+
 .brand-icon {
   width: 52px;
   height: 52px;
@@ -61,6 +63,8 @@
   text-align: center;
   font-size: 0.9rem;
 }
+
+/* Input */
 
 .login-box label {
   display: block;
@@ -101,6 +105,8 @@
   color: #849a98;
 }
 
+/* Main Button */
+
 .main-button {
   width: 100%;
   min-height: 48px;
@@ -130,6 +136,8 @@
   margin-left: 8px;
 }
 
+/* Loader */
+
 .loader {
   display: inline-block;
   width: 18px;
@@ -144,6 +152,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Divider */
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 18px;
+  color: #718785;
+  font-size: 0.7rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(130, 180, 175, 0.2);
+}
+
+.divider span {
+  padding: 0 4px;
+}
+
+/* Google Button */
+
+.google-button {
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border: 1px solid #d7d7d7;
+  border-radius: 9px;
+  background: white;
+  color: #222;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.google-button:hover {
+  background: #f4f4f4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.google-logo {
+  flex-shrink: 0;
 }
 
 /* OTP */
@@ -197,6 +258,8 @@
   box-shadow: 0 0 14px rgba(46, 212, 189, 0.45) !important;
 }
 
+/* Timer */
+
 .timer {
   margin-top: 16px;
   text-align: center;
@@ -212,12 +275,16 @@
   color: #ff8f8f;
 }
 
+/* Error */
+
 .error-message {
   margin-top: 10px;
   color: #ff8f8f;
   text-align: center;
   font-size: 0.78rem;
 }
+
+/* Resend */
 
 .resend-section {
   margin-top: 18px;
