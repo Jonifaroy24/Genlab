@@ -11,104 +11,319 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
 }
 
 .dark-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 8, 12, 0.65);
+  background: rgba(0, 8, 12, 0.72);
 }
 
 .login-box {
   position: relative;
   z-index: 1;
-  width: min(400px, 100%);
+  width: min(420px, 100%);
   padding: 42px;
-  border: 1px solid rgba(80, 255, 220, 0.45);
-  border-radius: 16px;
-  background: rgba(4, 24, 28, 0.82);
-  box-shadow: 0 0 35px rgba(0, 255, 204, 0.25);
+  border: 1px solid rgba(80, 255, 220, 0.4);
+  border-radius: 22px;
+  background: rgba(4, 24, 28, 0.86);
+  box-shadow:
+    0 0 40px rgba(0, 255, 204, 0.18),
+    inset 0 0 30px rgba(0, 255, 204, 0.03);
   color: white;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(14px);
+}
+
+.brand-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #45f5d4;
+  border-radius: 14px;
+  color: #45f5d4;
+  font-size: 1.5rem;
+  box-shadow: 0 0 20px rgba(69, 245, 212, 0.2);
 }
 
 .login-box h1 {
   margin: 0;
   color: #45f5d4;
   text-align: center;
+  font-size: 1.8rem;
 }
 
-.login-box > p {
-  margin: 8px 0 28px;
-  color: #b7c8c7;
+.subtitle {
+  margin: 8px 0 28px !important;
+  color: #a9bfbd;
   text-align: center;
   font-size: 0.9rem;
 }
 
 .login-box label {
   display: block;
-  margin: 16px 0 7px;
+  margin: 16px 0 8px;
   color: #72ffe5;
   font-size: 0.85rem;
+  font-weight: bold;
 }
 
-.login-box input {
-  width: 100%;
-  padding: 12px;
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
   border: 1px solid #2ed4bd;
-  border-radius: 7px;
-  outline: none;
+  border-radius: 9px;
   background: rgba(0, 0, 0, 0.3);
+}
+
+.input-wrapper span {
+  font-size: 0.9rem;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 13px 4px;
+  border: none;
+  outline: none;
+  background: transparent;
   color: white;
 }
 
-.login-box input:focus {
-  box-shadow: 0 0 10px #2ed4bd;
+.input-wrapper:focus-within {
+  box-shadow: 0 0 14px rgba(46, 212, 189, 0.35);
 }
 
-.login-box button {
+.input-wrapper input::placeholder {
+  color: #849a98;
+}
+
+.main-button {
   width: 100%;
-  margin-top: 25px;
-  padding: 12px;
-  border: 0;
-  border-radius: 7px;
+  min-height: 48px;
+  margin-top: 24px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
   background: #22cbb4;
   color: #041d20;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.25s;
 }
 
-.login-box button:hover {
+.main-button:hover:not(:disabled) {
   background: #64ffe4;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 203, 180, 0.2);
 }
 
-/* Forgot password - only this part is changed */
-.forgot-password {
-  display: block;
+.main-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.main-button span {
+  margin-left: 8px;
+}
+
+.loader {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(4, 29, 32, 0.3);
+  border-top-color: #041d20;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* OTP */
+
+.user-display {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(69, 245, 212, 0.07);
+  color: #c7ddda;
+  font-size: 0.85rem;
+}
+
+.user-display strong {
+  color: white;
+}
+
+.user-display button {
+  margin-left: auto;
+  border: none;
+  background: none;
+  color: #55f6d7;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.otp-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.otp-box {
+  width: 48px !important;
+  height: 54px;
+  padding: 0 !important;
+  border: 1px solid #2ed4bd !important;
+  border-radius: 9px !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: white !important;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.otp-box:focus {
+  border-color: #64ffe4 !important;
+  box-shadow: 0 0 14px rgba(46, 212, 189, 0.45) !important;
+}
+
+.timer {
+  margin-top: 16px;
+  text-align: center;
+  color: #9fb5b3;
+  font-size: 0.8rem;
+}
+
+.timer strong {
+  color: #55f6d7;
+}
+
+.expired {
+  color: #ff8f8f;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: #ff8f8f;
+  text-align: center;
+  font-size: 0.78rem;
+}
+
+.resend-section {
+  margin-top: 18px;
+  text-align: center;
+  color: #849a98;
+  font-size: 0.78rem;
+}
+
+.resend-button {
+  margin-left: 5px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #55f6d7;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resend-button:disabled {
+  color: #536765;
+  cursor: not-allowed;
+}
+
+/* Signup */
+
+.switch-text {
+  margin: 25px 0 0 !important;
+  color: #9fb5b3;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.text-link {
   width: auto !important;
-  margin: 12px 0 0 auto !important;
+  margin: 0 !important;
   padding: 0 !important;
   border: none !important;
-  border-radius: 0 !important;
   background: none !important;
   color: #55f6d7 !important;
-  font-size: 0.8rem;
-  text-align: right;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: normal;
 }
 
-.forgot-password:hover {
-  background: none !important;
-  color: #64ffe4 !important;
+/* Success */
+
+.success-screen {
+  text-align: center;
 }
 
-.forgot-password,
-.signup-text a {
-  color: #55f6d7;
-  text-decoration: none;
+.success-icon {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #45f5d4;
+  border-radius: 50%;
+  color: #45f5d4;
+  font-size: 2.4rem;
+  box-shadow: 0 0 30px rgba(69, 245, 212, 0.3);
+  animation: successPop 0.5s ease;
 }
 
-.signup-text {
-  font-size: 0.85rem;
+@keyframes successPop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 13px;
+  border-radius: 9px;
+  background: rgba(69, 245, 212, 0.08);
+  color: #bde9e2;
+  font-size: 0.8rem;
+}
+
+.success-card span {
+  color: #45f5d4;
+  font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 32px 22px;
+  }
+
+  .otp-container {
+    gap: 5px;
+  }
+
+  .otp-box {
+    width: 43px !important;
+    height: 50px;
+  }
 }
