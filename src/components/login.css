@@ -35,8 +35,6 @@
   backdrop-filter: blur(14px);
 }
 
-/* Brand */
-
 .brand-icon {
   width: 52px;
   height: 52px;
@@ -63,8 +61,6 @@
   text-align: center;
   font-size: 0.9rem;
 }
-
-/* Input */
 
 .login-box label {
   display: block;
@@ -105,8 +101,6 @@
   color: #849a98;
 }
 
-/* Main Button */
-
 .main-button {
   width: 100%;
   min-height: 48px;
@@ -136,8 +130,6 @@
   margin-left: 8px;
 }
 
-/* Loader */
-
 .loader {
   display: inline-block;
   width: 18px;
@@ -153,8 +145,6 @@
     transform: rotate(360deg);
   }
 }
-
-/* Divider */
 
 .divider {
   display: flex;
@@ -177,16 +167,14 @@
   padding: 0 4px;
 }
 
-/* Google Button */
-
 .google-button {
   width: 100%;
-  min-height: 48px;
+  min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 12px 18px;
+  padding: 9px 14px;
   border: 1px solid #d7d7d7;
   border-radius: 9px;
   background: white;
@@ -204,10 +192,10 @@
 }
 
 .google-logo {
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
-
-/* OTP */
 
 .user-display {
   display: flex;
@@ -258,8 +246,6 @@
   box-shadow: 0 0 14px rgba(46, 212, 189, 0.45) !important;
 }
 
-/* Timer */
-
 .timer {
   margin-top: 16px;
   text-align: center;
@@ -275,16 +261,12 @@
   color: #ff8f8f;
 }
 
-/* Error */
-
 .error-message {
   margin-top: 10px;
   color: #ff8f8f;
   text-align: center;
   font-size: 0.78rem;
 }
-
-/* Resend */
 
 .resend-section {
   margin-top: 18px;
@@ -308,8 +290,6 @@
   cursor: not-allowed;
 }
 
-/* Signup */
-
 .switch-text {
   margin: 25px 0 0 !important;
   color: #9fb5b3;
@@ -327,8 +307,6 @@
   font-weight: bold;
   cursor: pointer;
 }
-
-/* Success */
 
 .success-screen {
   text-align: center;
@@ -377,8 +355,6 @@
   color: #45f5d4;
   font-weight: bold;
 }
-
-/* Mobile */
 
 @media (max-width: 480px) {
   .login-box {

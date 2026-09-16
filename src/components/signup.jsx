@@ -6,13 +6,44 @@ export default function Signup({ goToLogin }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  function handleSignup(event) {
+  async function handleSignup(event) {
     event.preventDefault();
 
-    if (name && email && password) {
-      alert("Account created successfully!");
-      goToLogin();
+    setMessage("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:5000/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setMessage(data.message);
+        return;
+      }
+
+      setMessage("Account created successfully!");
+
+      setTimeout(() => {
+        goToLogin();
+      }, 1000);
+    } catch (error) {
+      setMessage("Could not connect to the server.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -55,14 +86,24 @@ export default function Signup({ goToLogin }) {
             required
           />
 
-          <button className="main-button" type="submit">
-            Create Account
+          {message && <p>{message}</p>}
+
+          <button
+            className="main-button"
+            type="submit"
+            disabled={loading}
+          >
+            {loading ? "Creating account..." : "Create Account"}
           </button>
         </form>
 
         <p className="switch-text">
           Already have an account?{" "}
-          <button className="text-link" type="button" onClick={goToLogin}>
+          <button
+            className="text-link"
+            type="button"
+            onClick={goToLogin}
+          >
             Login
           </button>
         </p>
