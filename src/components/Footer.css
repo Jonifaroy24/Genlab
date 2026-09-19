@@ -1,0 +1,241 @@
+.genlab-footer {
+  background: #060a12;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 10;
+  margin-top: 60px;
+}
+
+.footer-newsletter-banner {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border-subtle);
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(245, 158, 11, 0.05), transparent);
+}
+
+.newsletter-card {
+  background: linear-gradient(135deg, rgba(20, 31, 54, 0.7), rgba(10, 16, 28, 0.9));
+  border: 1px solid var(--border-card);
+  border-radius: 20px;
+  padding: 36px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.newsletter-text {
+  max-width: 540px;
+}
+
+.newsletter-text h3 {
+  font-size: 1.5rem;
+  margin: 10px 0 6px;
+  color: var(--text-primary);
+}
+
+.newsletter-text p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.newsletter-form {
+  flex-shrink: 0;
+  min-width: 360px;
+}
+
+.input-inline-group {
+  display: flex;
+  gap: 8px;
+  background: rgba(7, 11, 20, 0.8);
+  border: 1px solid var(--border-card);
+  padding: 6px;
+  border-radius: 12px;
+}
+
+.input-inline-group:focus-within {
+  border-color: var(--amber-primary);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.2);
+}
+
+.input-inline-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+}
+
+.newsletter-btn {
+  background: var(--gradient-amber);
+  color: #070b14;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  transition: transform 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  transform: scale(1.03);
+}
+
+.subscribed-success {
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #6ee7b7;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Main Content Grid */
+.footer-main-content {
+  padding: 64px 0 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 56px;
+}
+
+.footer-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  cursor: pointer;
+}
+
+.footer-bio {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 360px;
+  margin-bottom: 20px;
+}
+
+.philosophy-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.quote-tag {
+  font-size: 0.78rem;
+  color: #fbbf24;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.footer-links-col h4 {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: var(--amber-glow);
+}
+
+.footer-links-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links-col button,
+.footer-links-col a {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-align: left;
+  padding: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links-col button:hover,
+.footer-links-col a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6ee7b7;
+  font-weight: 500;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-pill {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.social-pill:hover {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fff;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+@media (max-width: 960px) {
+  .newsletter-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 24px;
+  }
+  .newsletter-form {
+    min-width: 100%;
+    width: 100%;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .footer-brand-col {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+}
